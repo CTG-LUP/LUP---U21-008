@@ -13,7 +13,6 @@
       background-color: red;
     }
 
-    /* Contenedor principal con fondo blanco */
     .main-container {
       background-color: white;
       width: 95%;
@@ -25,7 +24,6 @@
       margin-top: 20px;
     }
 
-    /* Estilo para el título centrado */
     .title {
       font-size: 2.5em;
       font-weight: bold;
@@ -34,64 +32,54 @@
       margin-bottom: 20px;
     }
 
-    /* Contenedor con el texto y cuadros "Código", "Fecha" y "Revisión" */
     .info-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    /* Contenedor del texto de la leyenda */
-    .legend-text {
-      color: red;
-      font-size: 1.2em;
-      flex: 0 0 70%;
-      margin-bottom: 20px;
-    }
-
-    /* Contenedor de los cuadros "Código", "Fecha" y "Revisión" */
-    .info-boxes {
-      flex: 0 0 30%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       margin-bottom: 20px;
     }
 
-    /* Estilo para los cuadros "Código", "Fecha", "Revisión" */
+    .legend-text {
+      color: red;
+      font-size: 1.2em;
+      text-align: center;
+      flex: 0 0 70%;
+      margin-bottom: 20px;
+    }
+
+    .info-boxes {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .legend, .legend-data {
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
     .legend {
       background-color: red;
       color: white;
-      padding: 10px;
-      border-radius: 5px;
-      text-align: center;
-      margin-bottom: 10px;
     }
 
-    /* Estilo para los cuadros con datos (Código, Fecha, Revisión) */
     .legend-data {
       background-color: #f1f1f1;
       color: black;
-      padding: 10px;
-      border-radius: 5px;
-      text-align: center;
-      margin-bottom: 10px;
     }
 
-    /* Asegura que "Código", "Fecha" y "Revisión" estén en la misma línea con sus puntos */
     .legend-row {
       display: flex;
       align-items: center;
       margin-bottom: 10px;
     }
 
-    .legend,
-    .legend-data {
+    .legend, .legend-data {
       margin-right: 10px;
     }
 
-    /* Medidas responsivas */
     @media screen and (max-width: 768px) {
       .info-container {
         flex-direction: column;
@@ -111,14 +99,12 @@
         display: block;
       }
 
-      .legend,
-      .legend-data {
+      .legend, .legend-data {
         margin-right: 0;
         margin-bottom: 5px;
       }
     }
 
-    /* Medidas para pantallas más pequeñas */
     @media screen and (max-width: 480px) {
       .title {
         font-size: 1.8em;
@@ -129,68 +115,56 @@
       }
     }
 
-    /* Nuevo contenedor con borde verde y fondo blanco */
     .action-container {
-      background-color: white; /* Fondo blanco */
-      color: black; /* Texto en negro */
-      border: 2px solid green; /* Borde verde */
+      background-color: white;
+      color: black;
+      border: 2px solid green;
       padding: 15px;
       border-radius: 5px;
       font-size: 1.2em;
-      margin-top: 20px; /* Espacio entre contenedores */
+      margin-top: 20px;
       text-align: center;
     }
 
-    /* Contenedor de las imágenes */
     .image-container {
       margin-top: 20px;
       text-align: center;
     }
 
-    /* Estilo para las imágenes */
     .image-container img {
       width: 100%;
       max-width: 600px;
       margin-bottom: 20px;
       border-radius: 5px;
     }
-
   </style>
 </head>
 <body>
 
   <div class="title">LUP - U21-010</div>
   <div class="main-container">
-    <!-- Contenedor con el texto y los cuadros "Código", "Fecha" y "Revisión" -->
     <div class="info-container">
-      <!-- Texto con leyenda alineado a la izquierda -->
-      <div class="legend-text">MANIOBRA PARA APERTURA MANUAL DEL INTERRUPTOR 52G.</div>
-
-      <!-- Cuadros con "Código", "Fecha" y "Revisión" a la derecha -->
       <div class="info-boxes">
         <div class="legend-row">
           <div class="legend">Código</div>
           <div class="legend-data">...</div>
         </div>
-
         <div class="legend-row">
           <div class="legend">Fecha</div>
           <div class="legend-data">...</div>
         </div>
-
         <div class="legend-row">
           <div class="legend">Revisión</div>
           <div class="legend-data">...</div>
         </div>
       </div>
+      <div class="legend-text">MANIOBRA PARA APERTURA MANUAL DEL INTERRUPTOR 52G.</div>
     </div>
 
-    <!-- Nuevo contenedor con borde verde y fondo blanco -->
     <div class="action-container">
       EN CASO DE NECESITAR EL ACCIONAMIENTO MANUAL DE CO2 EN ENCLOSURE:
     </div>
-    
-    <!-- Contenedor de imágenes con contenedores separados para cada una -->
+
     <div class="image-container">
       <div class="image-item">
         <img src="001.png" alt="Imagen 001" loading="lazy">
@@ -199,19 +173,15 @@
         <img src="002.png" alt="Imagen 002" loading="lazy">
       </div>
     </div>
-    
-    
-    <!-- Nuevo contenedor con borde verde y fondo blanco -->
+
     <div class="action-container">
       La activación de la manija provocara la liberación de dióxido de carbono dentro del compartimiento de la turbina. Antes de activarlo, asegúrese de que todo el personal este fuera del compartimiento.
     </div>
   </div>
 
   <script>
-    // Desactivar clic derecho
     document.addEventListener('contextmenu', event => event.preventDefault());
     
-    // Desactivar teclas de acceso a las herramientas de desarrollo
     document.onkeydown = function(e) {
       if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
         e.preventDefault();
